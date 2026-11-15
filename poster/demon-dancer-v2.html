@@ -1,0 +1,200 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1620px;overflow:hidden;position:relative;font-family:Montserrat,sans-serif;color:#fff;
+ background:
+  radial-gradient(ellipse 60% 40% at 38% 52%,#8a1a1c 0%,rgba(110,18,22,.6) 35%,transparent 70%),
+  radial-gradient(ellipse 70% 35% at 80% 8%,rgba(255,170,120,.28),transparent 70%),
+  radial-gradient(ellipse 100% 60% at 50% 60%,#3a0709,#120203 75%)}
+.layer{position:absolute;left:0;top:0}
+.gold{background:linear-gradient(180deg,#fff3d1 0%,#e9c77e 45%,#a87a32 60%,#f1d79a 85%,#fff1cc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.title{position:absolute;right:56px;top:84px;width:520px;text-align:center}
+.title h1{font-family:Cinzel;font-weight:700;font-size:112px;line-height:.98;letter-spacing:2px;
+ filter:drop-shadow(0 4px 14px rgba(0,0,0,.7))}
+.title .house{font-family:Cinzel;font-weight:600;font-size:26px;letter-spacing:9px;color:#f4e6cf;margin-top:18px;text-shadow:0 2px 10px #000}
+.title .div{margin:16px auto 0;width:330px;height:20px}
+
+.product{position:absolute;left:18px;top:392px;width:640px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.75)) drop-shadow(18px 0 40px rgba(255,60,40,.18))}
+
+.decant{position:absolute;filter:drop-shadow(0 18px 14px rgba(0,0,0,.7))}
+.d5{left:760px;top:817px;width:96px}
+.d10{left:878px;top:666px;width:104px}
+.pill{position:absolute;top:1166px;background:linear-gradient(180deg,#1a1a1a,#000);border:1.5px solid #c9a35a;border-radius:10px;
+ font-weight:700;font-size:26px;padding:6px 0;text-align:center;box-shadow:0 6px 14px rgba(0,0,0,.6)}
+.p5{left:763px;width:90px}
+.p10{left:884px;width:92px}
+
+.banner{position:absolute;left:22px;top:1180px;width:640px;height:190px}
+.banner .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-right:20px}
+.banner b{font-family:Cinzel;font-weight:800;font-size:76px;letter-spacing:2px;color:#fff6ea;text-shadow:0 3px 10px rgba(0,0,0,.55);line-height:1}
+.banner span{font-family:Cinzel;font-weight:700;font-size:38px;letter-spacing:8px;margin-top:10px}
+
+.icons{position:absolute;top:1400px;left:40px;width:640px;display:flex;justify-content:space-around;align-items:flex-start}
+.ic{width:190px;text-align:center;font-weight:700;font-size:17px;letter-spacing:1px;line-height:1.3;text-shadow:0 2px 8px #000}
+.ic svg{width:78px;height:78px;display:block;margin:0 auto 10px}
+.sep{width:1px;height:110px;background:linear-gradient(transparent,#c9a35a,transparent);margin-top:6px}
+
+.logo{position:absolute;right:56px;top:1428px;width:330px;text-align:center}
+.logo svg{width:64px;height:44px}
+.logo .n{font-family:Cinzel;font-weight:800;font-size:46px;letter-spacing:5px;line-height:1;margin-top:4px}
+.logo .e{font-family:Cinzel;font-weight:600;font-size:16px;letter-spacing:13px;color:#e9c77e;margin-top:8px;display:flex;align-items:center;gap:10px;justify-content:center}
+.logo .e i{width:40px;height:1px;background:#c9a35a}
+</style></head>
+<body>
+
+<!-- BACKGROUND: smoke + ribbon + rocks -->
+<svg class="layer" width="1080" height="1620">
+ <defs>
+  <filter id="smoke" x="0" y="0" width="100%" height="100%">
+   <feTurbulence type="fractalNoise" baseFrequency="0.0035 0.008" numOctaves="5" seed="11"/>
+   <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.55   0 0 0 0 0.45   0 0 0 2.2 -1.05"/>
+  </filter>
+  <radialGradient id="smMask" cx="45%" cy="40%" r="65%"><stop offset="0" stop-color="#fff"/><stop offset=".8" stop-color="#444"/><stop offset="1" stop-color="#000"/></radialGradient>
+  <mask id="mk"><rect width="1080" height="1620" fill="url(#smMask)"/></mask>
+
+  <linearGradient id="silk" x1="0" y1="0" x2="1" y2="0">
+   <stop offset="0" stop-color="#2a0306"/><stop offset=".18" stop-color="#9e0f18"/><stop offset=".3" stop-color="#ff6a4d"/>
+   <stop offset=".38" stop-color="#b0141d"/><stop offset=".55" stop-color="#4a050a"/><stop offset=".7" stop-color="#c41a22"/>
+   <stop offset=".78" stop-color="#ff7b5c"/><stop offset=".88" stop-color="#8d0d15"/><stop offset="1" stop-color="#2a0306"/>
+  </linearGradient>
+  <linearGradient id="silk2" x1="0" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#5a070c"/><stop offset=".45" stop-color="#d4282c"/><stop offset=".55" stop-color="#ff8a6a"/><stop offset="1" stop-color="#3a0408"/>
+  </linearGradient>
+
+  <filter id="rock" x="-5%" y="-5%" width="110%" height="110%">
+   <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="6" seed="4" result="n"/>
+   <feDiffuseLighting in="n" surfaceScale="5" lighting-color="#d8c6bb" result="l"><feDistantLight azimuth="235" elevation="38"/></feDiffuseLighting>
+   <feComposite in="l" in2="SourceGraphic" operator="in" result="t"/>
+   <feBlend in="t" in2="SourceGraphic" mode="multiply"/>
+  </filter>
+  <linearGradient id="rockG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a817b"/><stop offset=".2" stop-color="#55403d"/><stop offset="1" stop-color="#1a0d0d"/></linearGradient>
+  <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5a3a" stop-opacity="0"/><stop offset=".5" stop-color="#ff7a52" stop-opacity=".75"/><stop offset="1" stop-color="#ff5a3a" stop-opacity="0"/></linearGradient>
+  <filter id="blur6"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="blur30"><feGaussianBlur stdDeviation="30"/></filter>
+ </defs>
+
+ <rect width="1080" height="1620" filter="url(#smoke)" mask="url(#mk)" opacity=".55"/>
+
+ <!-- glow halo behind product -->
+ <ellipse cx="360" cy="760" rx="330" ry="260" fill="#ff3a26" opacity=".22" filter="url(#blur30)"/>
+
+ <!-- dancing silk ribbon -->
+ <path d="M-60 560 C 120 420, 300 700, 520 560 S 860 380, 1140 520 L 1140 600 C 880 470, 760 690, 520 650 S 140 520, -60 650 Z" fill="url(#silk)" opacity=".95"/>
+ <path d="M-60 650 C 140 520, 380 760, 560 680 C 700 620, 640 560, 760 560 C 640 600, 690 700, 540 740 C 360 790, 150 640, -60 720 Z" fill="url(#silk2)" opacity=".8"/>
+ <path d="M700 300 C 820 260, 900 360, 1000 330 S 1120 260, 1150 300 L 1150 330 C 1100 300, 1060 380, 990 380 S 820 300, 700 300 Z" fill="url(#silk2)" opacity=".35"/>
+
+ <!-- rocks -->
+ <g filter="url(#rock)">
+  <path d="M-40 1112 L60 1088 L210 1096 L360 1080 L520 1094 L640 1086 L760 1108 L790 1170 L760 1290 L-40 1310 Z" fill="url(#rockG)"/>
+  <path d="M712 1170 L800 1146 L930 1140 L1040 1152 L1110 1168 L1110 1330 L700 1330 L690 1240 Z" fill="url(#rockG)"/>
+ </g>
+ <path d="M-40 1112 L60 1088 L210 1096 L360 1080 L520 1094 L640 1086 L760 1108" fill="none" stroke="url(#rim)" stroke-width="3"/>
+ <path d="M712 1170 L800 1146 L930 1140 L1040 1152 L1110 1168" fill="none" stroke="url(#rim)" stroke-width="3"/>
+ <!-- floor -->
+ <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0203" stop-opacity="0"/><stop offset=".35" stop-color="#0c0203" stop-opacity=".85"/><stop offset="1" stop-color="#0c0203"/></linearGradient><rect x="0" y="1250" width="1080" height="370" fill="url(#fl)"/>
+ <ellipse cx="540" cy="1300" rx="620" ry="40" fill="#5a0e10" opacity=".55" filter="url(#blur30)"/>
+</svg>
+
+<!-- embers -->
+<svg class="layer" id="embers" width="1080" height="1620"></svg>
+
+<!-- TITLE -->
+<div class="title">
+ <h1 class="gold">DEMON<br>DANCER</h1>
+ <div class="house">EX NIHILO · PARIS</div>
+ <svg class="div" viewBox="0 0 330 20"><line x1="0" y1="10" x2="140" y2="10" stroke="#e9c77e"/><line x1="190" y1="10" x2="330" y2="10" stroke="#e9c77e"/>
+  <path d="M165 0 L169 8 L185 10 L169 12 L165 20 L161 12 L145 10 L161 8Z" fill="#f1d79a"/></svg>
+</div>
+
+<img class="product" src="dd.png">
+
+<div id="d5" class="decant d5"></div>
+<div id="d10" class="decant d10"></div>
+<div class="pill p5">5ml</div>
+<div class="pill p10">10ml</div>
+
+<!-- brush banner -->
+<div class="banner">
+ <svg width="640" height="190" viewBox="0 0 640 190">
+  <defs>
+   <filter id="brush" x="-5%" y="-10%" width="110%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.18" numOctaves="3" seed="2" result="t"/>
+    <feDisplacementMap in="SourceGraphic" in2="t" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+   </filter>
+   <linearGradient id="bg" x1="0" x2="1"><stop offset="0" stop-color="#6d0b10"/><stop offset=".5" stop-color="#b3161e"/><stop offset="1" stop-color="#7a0c12"/></linearGradient>
+  </defs>
+  <g filter="url(#brush)">
+   <path d="M30 40 Q320 18 610 34 L620 150 Q330 172 20 156 Z" fill="url(#bg)"/>
+   <path d="M60 30 L560 26 L590 40 L80 46Z" fill="#d8323a" opacity=".55"/>
+   <path d="M40 150 L600 140 L580 160 L60 166Z" fill="#4a0508" opacity=".6"/>
+  </g>
+ </svg>
+ <div class="txt"><b>ISI SEMULA</b><span style="color:#ffe9c2">5ML / 10ML</span></div>
+</div>
+
+<!-- icons -->
+<div class="icons">
+ <div class="ic"><svg viewBox="0 0 78 78"><circle cx="39" cy="39" r="36" fill="rgba(0,0,0,.35)" stroke="#d6b064" stroke-width="2"/>
+  <g transform="translate(21 19) scale(1.5)" fill="none" stroke="#f1d79a" stroke-width="1.5" stroke-linejoin="round"><rect x="9.5" y="2" width="5" height="3" rx=".5"/><rect x="10.5" y="5" width="3" height="3"/><rect x="6" y="8" width="12" height="14" rx="2.5"/><line x1="9" y1="13" x2="15" y2="13"/></g></svg>TRAVEL<br>FRIENDLY</div>
+ <div class="sep"></div>
+ <div class="ic"><svg viewBox="0 0 78 78"><circle cx="39" cy="39" r="36" fill="rgba(0,0,0,.35)" stroke="#d6b064" stroke-width="2"/>
+  <g transform="translate(21 19) scale(1.5)" fill="none" stroke="#f1d79a" stroke-width="1.5" stroke-linejoin="round"><path d="M5 8h14l-1.2 13H6.2z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></g></svg>EASY<br>TO CARRY</div>
+ <div class="sep"></div>
+ <div class="ic"><svg viewBox="0 0 78 78"><circle cx="39" cy="39" r="36" fill="rgba(0,0,0,.35)" stroke="#d6b064" stroke-width="2"/>
+  <g transform="translate(21 21) scale(1.5)" fill="#f1d79a"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></g></svg>PERFECT FOR<br>ANY OCCASION</div>
+</div>
+
+<!-- logo -->
+<div class="logo">
+ <svg viewBox="0 0 64 44"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3d1"/><stop offset=".55" stop-color="#d6b064"/><stop offset="1" stop-color="#f1d79a"/></linearGradient></defs>
+  <path d="M5 37 L3 10 L18 23 L32 4 L46 23 L61 10 L59 37 Z" fill="url(#cg)"/><rect x="5" y="38.5" width="54" height="4.5" fill="url(#cg)"/>
+  <circle cx="3" cy="9" r="3" fill="url(#cg)"/><circle cx="32" cy="3.5" r="3" fill="url(#cg)"/><circle cx="61" cy="9" r="3" fill="url(#cg)"/></svg>
+ <div class="n gold">ZZSCENT</div>
+ <div class="e"><i></i>EMPIRE<i></i></div>
+</div>
+
+<!-- foreground bokeh -->
+<svg class="layer" width="1080" height="1620" style="pointer-events:none">
+ <defs><filter id="fb"><feGaussianBlur stdDeviation="22"/></filter></defs>
+ <circle cx="40" cy="1580" r="120" fill="#7a1216" opacity=".55" filter="url(#fb)"/>
+ <circle cx="1050" cy="1560" r="110" fill="#8a1a16" opacity=".45" filter="url(#fb)"/>
+ <circle cx="1060" cy="120" r="90" fill="#a3301e" opacity=".35" filter="url(#fb)"/>
+</svg>
+
+<script>
+function decant(capH,bodyH,id){
+ const W=60,y0=capH+6,H=y0+bodyH,lq=y0+bodyH*0.22;
+ return `<svg viewBox="0 0 ${W} ${H}" width="100%">
+ <defs>
+  <linearGradient id="cap${id}" x1="0" x2="1"><stop offset="0" stop-color="#000"/><stop offset=".22" stop-color="#3d3d3d"/><stop offset=".4" stop-color="#0b0b0b"/><stop offset=".85" stop-color="#262626"/><stop offset="1" stop-color="#000"/></linearGradient>
+  <linearGradient id="ring${id}" x1="0" x2="1"><stop offset="0" stop-color="#777"/><stop offset=".3" stop-color="#eee"/><stop offset=".7" stop-color="#999"/><stop offset="1" stop-color="#555"/></linearGradient>
+  <linearGradient id="liq${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4ea" stop-opacity=".6"/><stop offset="1" stop-color="#ffd2bd" stop-opacity=".5"/></linearGradient>
+ </defs>
+ <rect x="8" y="0" width="44" height="${capH}" rx="4" fill="url(#cap${id})"/>
+ <rect x="14" y="4" width="3" height="${capH-8}" rx="1.5" fill="#fff" opacity=".45"/>
+ <rect x="8" y="${capH-6}" width="44" height="2" fill="#000" opacity=".6"/>
+ <rect x="11" y="${capH}" width="38" height="6" fill="url(#ring${id})"/>
+ <rect x="6" y="${y0}" width="48" height="${bodyH}" rx="5" fill="rgba(255,255,255,.07)"/>
+ <rect x="9" y="${lq}" width="42" height="${H-lq-9}" rx="3" fill="url(#liq${id})"/>
+ <line x1="9" x2="51" y1="${lq}" y2="${lq}" stroke="#fff" stroke-opacity=".7"/>
+ <path d="M30 ${y0} L30 ${H-24} Q30 ${H-12} 40 ${H-11}" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.1"/>
+ <rect x="6" y="${y0}" width="48" height="${bodyH}" rx="5" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="1.3"/>
+ <rect x="9.5" y="${y0+2}" width="41" height="${bodyH-6}" rx="3" fill="none" stroke="#fff" stroke-opacity=".22"/>
+ <rect x="10" y="${y0+6}" width="4" height="${bodyH-18}" rx="2" fill="#fff" opacity=".55"/>
+ <rect x="47" y="${y0+10}" width="2.2" height="${bodyH-26}" rx="1" fill="#ff6a48" opacity=".55"/>
+ <rect x="7" y="${H-9}" width="46" height="8" rx="3" fill="#fff" opacity=".22"/>
+</svg>`}
+document.getElementById('d5').innerHTML=decant(52,150,'a');
+document.getElementById('d10').innerHTML=decant(58,215,'b');
+
+// embers (seeded)
+let s=7;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+let h='<defs><filter id="eg" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>';
+for(let i=0;i<70;i++){const x=r()*1080,y=200+r()*1100,rad=1+r()*3.2,o=.35+r()*.6,c=r()>.5?'#ffb15a':'#ff6a3a';
+ h+=`<circle cx="${x}" cy="${y}" r="${rad*2.2}" fill="${c}" opacity="${o*.45}" filter="url(#eg)"/><circle cx="${x}" cy="${y}" r="${rad*.7}" fill="#ffe2b0" opacity="${o}"/>`}
+document.getElementById('embers').innerHTML=h;
+</script>
+</body></html>
