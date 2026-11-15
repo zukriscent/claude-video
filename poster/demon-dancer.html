@@ -1,0 +1,138 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1350px;overflow:hidden;font-family:Montserrat,sans-serif;color:#fff;background:#070708}
+.stage{position:absolute;inset:0;
+ background:
+  radial-gradient(ellipse 55% 45% at 50% 52%,rgba(205,210,220,.30),transparent 70%),
+  radial-gradient(ellipse 90% 60% at 50% 0%,rgba(150,155,170,.22),transparent 60%),
+  radial-gradient(ellipse 120% 40% at 50% 100%,rgba(196,170,120,.10),transparent 70%),
+  #070708}
+.smoke{position:absolute;inset:0;opacity:.55;mix-blend-mode:screen}
+.lines{position:absolute;inset:0;opacity:.06}
+.frame{position:absolute;inset:26px;border:1px solid rgba(220,222,228,.25)}
+.frame:after{content:'';position:absolute;inset:8px;border:1px solid rgba(220,222,228,.10)}
+.silver{background:linear-gradient(180deg,#ffffff 0%,#e3e6ea 40%,#8d9299 52%,#d9dce0 70%,#ffffff 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold{background:linear-gradient(180deg,#f6e7c1,#c9a861 55%,#f2deb0);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.head{position:absolute;top:62px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+.head svg{width:58px;height:40px}
+.head .brand{font-family:Cinzel;font-weight:900;font-size:40px;letter-spacing:12px;margin-top:6px;padding-left:12px}
+.head .sub{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:7px;color:#b9bcc2;margin-top:8px}
+.head .sub i{display:block;width:46px;height:1px;background:linear-gradient(90deg,transparent,#c9a861)}
+.head .sub i.r{background:linear-gradient(90deg,#c9a861,transparent)}
+
+.title{position:absolute;top:240px;left:0;right:0;text-align:center}
+.title .house{font-size:15px;letter-spacing:12px;color:#d4d7dc;font-weight:500}
+.title h1{font-family:'Cormorant Garamond';font-weight:600;font-size:118px;line-height:1;letter-spacing:4px;margin-top:6px}
+.title .edp{font-family:'Cormorant Garamond';font-style:italic;font-size:26px;color:#cfd2d6;margin-top:2px;letter-spacing:2px}
+
+.product{position:absolute;left:285px;top:448px;width:510px;
+ -webkit-box-reflect:below -2px linear-gradient(transparent 72%,rgba(255,255,255,.22));
+ filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.floor{position:absolute;left:60px;right:60px;top:1012px;height:2px;background:linear-gradient(90deg,transparent,rgba(230,232,236,.55),transparent)}
+.floorglow{position:absolute;left:140px;right:140px;top:985px;height:60px;border-radius:50%;background:radial-gradient(rgba(255,255,255,.18),transparent 70%)}
+
+.vial{position:absolute;-webkit-box-reflect:below -4px linear-gradient(transparent 70%,rgba(255,255,255,.25));filter:drop-shadow(0 18px 22px rgba(0,0,0,.7))}
+.v5{left:108px;top:609px;width:130px}
+.v10{right:96px;top:494px;width:140px}
+.vtag{position:absolute;font-family:Cinzel;font-weight:700;text-align:center}
+.vtag b{display:block;font-size:44px;letter-spacing:3px;line-height:1}
+.vtag span{display:block;font-family:Montserrat;font-size:11px;letter-spacing:5px;color:#b9bcc2;margin-top:6px;font-weight:500}
+.t5{left:93px;width:160px;top:516px}
+.t10{right:86px;width:160px;top:400px}
+
+.strip{position:absolute;top:1100px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:28px}
+.strip .pill{color:#e3c98f;background:#0b0b0c;border:1px solid rgba(201,168,97,.7);padding:14px 30px;font-size:15px;letter-spacing:6px;font-weight:700}
+.strip .dia{width:9px;height:9px;transform:rotate(45deg);background:#c9a861}
+.feats{position:absolute;top:1185px;left:0;right:0;text-align:center;font-size:13px;letter-spacing:4px;color:#c6c9ce;font-weight:500}
+.feats span{margin:0 14px}
+.feats span:before{content:'✦  ';color:#c9a861}
+.cta{position:absolute;top:1232px;left:50%;transform:translateX(-50%);padding:16px 54px;font-size:15px;font-weight:700;letter-spacing:7px;color:#0b0b0c;
+ background:linear-gradient(180deg,#ffffff,#cfd3d8 50%,#f3f4f6);box-shadow:0 0 30px rgba(255,255,255,.18)}
+.spark{position:absolute;width:18px;height:18px}
+</style></head>
+<body>
+<div class="stage"></div>
+<svg class="smoke" width="1080" height="1350">
+ <defs>
+  <filter id="sm"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.009" numOctaves="4" seed="7"/>
+   <feColorMatrix values="0 0 0 0 0.85  0 0 0 0 0.86  0 0 0 0 0.9  0 0 0 1.6 -0.75"/></filter>
+  <radialGradient id="fade" cx="50%" cy="62%" r="60%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient>
+  <mask id="mk"><rect width="1080" height="1350" fill="url(#fade)"/></mask>
+ </defs>
+ <rect width="1080" height="1350" filter="url(#sm)" mask="url(#mk)" opacity=".5"/>
+</svg>
+<svg class="lines" width="1080" height="1350" fill="none" stroke="#fff" stroke-width="1">
+ <path d="M60 1350 L520 0 M0 1060 L360 0 M1080 1100 L640 0 M1080 820 L800 0 M200 1350 L700 0"/>
+ <path d="M0 470 L1080 360 M0 980 L1080 1080"/>
+</svg>
+<div class="frame"></div>
+
+<div class="head">
+ <svg viewBox="0 0 58 40"><defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e7c1"/><stop offset=".55" stop-color="#c9a861"/><stop offset="1" stop-color="#f2deb0"/></linearGradient></defs>
+  <path d="M4 34 L2 8 L16 20 L29 2 L42 20 L56 8 L54 34 Z" fill="url(#cg)"/><rect x="4" y="35" width="50" height="4" fill="url(#cg)"/>
+  <circle cx="2" cy="7" r="2.5" fill="url(#cg)"/><circle cx="29" cy="2" r="2.5" fill="url(#cg)"/><circle cx="56" cy="7" r="2.5" fill="url(#cg)"/></svg>
+ <div class="brand silver">ZZSCENT EMPIRE</div>
+ <div class="sub"><i></i>PREMIUM FRAGRANCE DECANTS<i class="r"></i></div>
+</div>
+
+<div class="title">
+ <div class="house">EX NIHILO · PARIS</div>
+ <h1 class="silver">DEMON DANCER</h1>
+</div>
+
+<div class="floorglow"></div>
+<img class="product" src="dd.png">
+<div class="floor"></div>
+
+<div class="vtag t5"><b class="silver">5ML</b><span>DECANT</span></div>
+<div class="vtag t10"><b class="silver">10ML</b><span>DECANT</span></div>
+<div id="v5" class="vial v5"></div>
+<div id="v10" class="vial v10"></div>
+
+<div class="strip"><div class="dia"></div><div class="pill">DECANT 5ML &amp; 10ML TERSEDIA</div><div class="dia"></div></div>
+<div class="feats"><span>100% ORIGINAL</span><span>BOTOL KACA PREMIUM</span><span>POS SELURUH MALAYSIA</span></div>
+<div class="cta">DM UNTUK ORDER</div>
+
+<script>
+function vial(bodyH,size,id){
+ const H=84+bodyH+6, by=84, lq=by+bodyH*0.13, lbY=by+bodyH*0.34, lbH=Math.max(70,bodyH*0.42);
+ return `<svg viewBox="0 0 100 ${H}" width="100%">
+ <defs>
+  <linearGradient id="met${id}" x1="0" x2="1"><stop offset="0" stop-color="#6f747b"/><stop offset=".18" stop-color="#f4f5f7"/><stop offset=".35" stop-color="#a7acb3"/><stop offset=".55" stop-color="#ffffff"/><stop offset=".78" stop-color="#8b9097"/><stop offset="1" stop-color="#4b4f55"/></linearGradient>
+  <linearGradient id="gl${id}" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".25" stop-color="#fff" stop-opacity=".04"/><stop offset=".75" stop-color="#fff" stop-opacity=".04"/><stop offset="1" stop-color="#fff" stop-opacity=".2"/></linearGradient>
+  <linearGradient id="lq${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf3e2" stop-opacity=".78"/><stop offset="1" stop-color="#e2cc98" stop-opacity=".7"/></linearGradient>
+ </defs>
+ <rect x="40" y="0" width="20" height="13" rx="3" fill="url(#met${id})"/>
+ <rect x="23" y="11" width="54" height="66" rx="5" fill="url(#met${id})"/>
+ ${[20,30,40,50,60,70].map(y=>`<line x1="23" x2="77" y1="${y+6}" y2="${y+6}" stroke="#000" stroke-opacity=".08"/>`).join('')}
+ <rect x="19" y="75" width="62" height="10" rx="2" fill="url(#met${id})"/>
+ <rect x="14" y="${by}" width="72" height="${bodyH}" rx="9" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.55)" stroke-width="1.4"/>
+ <rect x="18" y="${lq}" width="64" height="${by+bodyH-lq-8}" rx="6" fill="url(#lq${id})"/>
+ <line x1="18.5" x2="81.5" y1="${lq}" y2="${lq}" stroke="#fff" stroke-opacity=".6"/>
+ <line x1="50" x2="50" y1="${by+2}" y2="${by+bodyH-10}" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
+ <rect x="14" y="${by}" width="72" height="${bodyH}" rx="9" fill="url(#gl${id})"/>
+ <rect x="20" y="${lbY}" width="60" height="${lbH}" fill="#0c0c0d" stroke="#c9a861" stroke-width=".8"/>
+ <rect x="23" y="${lbY+3}" width="54" height="${lbH-6}" fill="none" stroke="#c9a861" stroke-opacity=".5" stroke-width=".4"/>
+ <path d="M44 ${lbY+9} l1.2 5 2.6-3 2.2-4 2.2 4 2.6 3 1.2-5 v8 h-12z" fill="#c9a861"/>
+ <text x="50" y="${lbY+lbH*0.48}" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="6.2" fill="#e6e8eb" letter-spacing=".6">DEMON</text>
+ <text x="50" y="${lbY+lbH*0.48+8}" text-anchor="middle" font-family="Cinzel" font-weight="700" font-size="6.2" fill="#e6e8eb" letter-spacing=".6">DANCER</text>
+ <line x1="36" x2="64" y1="${lbY+lbH*0.48+12}" y2="${lbY+lbH*0.48+12}" stroke="#c9a861" stroke-width=".4"/>
+ <text x="50" y="${lbY+lbH-7}" text-anchor="middle" font-family="Montserrat" font-weight="700" font-size="5" fill="#c9a861" letter-spacing="1">${size}</text>
+ <rect x="22" y="${by+6}" width="5" height="${bodyH-16}" rx="2.5" fill="#fff" opacity=".45"/>
+ <rect x="76" y="${by+10}" width="2" height="${bodyH-24}" rx="1" fill="#fff" opacity=".3"/>
+ <rect x="16" y="${by+bodyH-9}" width="68" height="7" rx="3" fill="#fff" opacity=".12"/>
+</svg>`}
+document.getElementById('v5').innerHTML=vial(220,'5 ML','a');
+document.getElementById('v10').innerHTML=vial(280,'10 ML','b');
+
+// sparkles
+[[150,420,1],[930,400,.8],[205,980,.6],[880,960,.7],[540,430,.5],[110,820,.5],[985,760,.6]].forEach(([x,y,s])=>{
+ const d=document.createElement('div');d.className='spark';d.style.left=x+'px';d.style.top=y+'px';d.style.transform=`scale(${s})`;
+ d.innerHTML='<svg viewBox="0 0 20 20"><path d="M10 0 L11.4 8.6 L20 10 L11.4 11.4 L10 20 L8.6 11.4 L0 10 L8.6 8.6Z" fill="#fff"/></svg>';
+ d.style.filter='drop-shadow(0 0 6px #fff)';document.body.appendChild(d)});
+</script>
+</body></html>
