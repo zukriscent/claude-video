@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZZScent – Perfume Original & Decant</title>
+<style>
+:root{--bg:#0e0e10;--card:#18181b;--txt:#f4f1ea;--mut:#9b978d;--gold:#c9a24b}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+header{padding:56px 16px 32px;text-align:center}
+header h1{font-size:2.2rem;letter-spacing:.2em;color:var(--gold)}
+header p{color:var(--mut);margin-top:8px}
+main{max-width:1000px;margin:auto;padding:0 16px 120px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;background:#222}
+.info{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.info h3{font-size:1.1rem}
+.info small{color:var(--mut)}
+select,button{font:inherit;border-radius:8px;border:1px solid #333;padding:10px;background:#222;color:var(--txt)}
+.price{color:var(--gold);font-weight:700;font-size:1.2rem}
+.add{background:var(--gold);color:#111;border:0;font-weight:700;cursor:pointer;margin-top:auto}
+#bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid #333;padding:12px 16px;display:none;justify-content:space-between;align-items:center;gap:12px}
+#bar button{background:#25d366;color:#fff;border:0;font-weight:700;cursor:pointer;padding:12px 18px}
+footer{text-align:center;color:var(--mut);padding:24px;font-size:.85rem}
+</style>
+</head>
+<body>
+<header><h1>ZZSCENT</h1><p>Perfume original · Full botol & decant</p></header>
+<main><div class="grid" id="grid"></div></main>
+<div id="bar"><span id="sum"></span><button onclick="order()">Order via WhatsApp</button></div>
+<footer>Semua perfume 100% original · Decant guna botol atomizer baru</footer>
+<script>
+// === EDIT SINI ===
+const WA = "60123456789"; // nombor WhatsApp (tanpa +)
+const products = [
+ {name:"Bleu de Chanel EDP", brand:"Chanel", img:"bleu.png",
+  sizes:{"Decant 5ml":25,"Decant 10ml":45,"Full botol 100ml":520}},
+ {name:"Demon Dancer", brand:"Contoh", img:"dd.png",
+  sizes:{"Decant 5ml":20,"Decant 10ml":35,"Full botol 100ml":380}},
+];
+// =================
+const cart=[];
+const g=document.getElementById("grid");
+products.forEach((p,i)=>{
+ g.insertAdjacentHTML("beforeend",`<div class="card"><img src="${p.img}" alt="${p.name}">
+ <div class="info"><div><h3>${p.name}</h3><small>${p.brand}</small></div>
+ <select id="s${i}" onchange="pr(${i})">${Object.keys(p.sizes).map(s=>`<option>${s}</option>`).join("")}</select>
+ <div class="price" id="p${i}"></div>
+ <button class="add" onclick="add(${i})">Tambah</button></div></div>`);pr(i);
+});
+function pr(i){const p=products[i],s=document.getElementById("s"+i).value;document.getElementById("p"+i).textContent="RM"+p.sizes[s]}
+function add(i){const p=products[i],s=document.getElementById("s"+i).value;cart.push({n:p.name,s,pr:p.sizes[s]});upd()}
+function upd(){const t=cart.reduce((a,c)=>a+c.pr,0);const b=document.getElementById("bar");b.style.display="flex";document.getElementById("sum").textContent=cart.length+" item · RM"+t}
+function order(){const t=cart.reduce((a,c)=>a+c.pr,0);
+ const m="Hi, saya nak order:\n"+cart.map(c=>`- ${c.n} (${c.s}) RM${c.pr}`).join("\n")+"\nJumlah: RM"+t;
+ open("https://wa.me/"+WA+"?text="+encodeURIComponent(m))}
+</script>
+</body>
+</html>
