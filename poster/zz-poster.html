@@ -1,0 +1,101 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1350px;background:#0b0907;font-family:Montserrat,Inter,sans-serif;color:#e9dcc0;overflow:hidden}
+.poster{position:relative;width:1080px;height:1350px;
+ background:radial-gradient(ellipse 70% 45% at 50% 30%,#2e2416 0%,#14100b 55%,#080605 100%)}
+.frame{position:absolute;inset:26px;border:2px solid #b8924a}
+.frame2{position:absolute;inset:36px;border:1px solid rgba(184,146,74,.45)}
+.serif{font-family:Cinzel,'DejaVu Serif',serif}
+.head{position:absolute;top:78px;left:0;right:0;text-align:center}
+.mono{display:inline-flex;align-items:center;justify-content:center;width:74px;height:74px;border:1.5px solid #c9a35a;transform:rotate(45deg);margin-bottom:26px}
+.mono span{transform:rotate(-45deg);font-family:Cinzel,serif;font-weight:700;font-size:26px;color:#e8c77e;letter-spacing:1px}
+.brand{font-size:78px;font-weight:700;letter-spacing:10px;line-height:1;
+ background:linear-gradient(180deg,#fbeccb 0%,#e3c07a 50%,#a97d36 100%);-webkit-background-clip:text;color:transparent}
+.sub{margin-top:14px;font-size:21px;letter-spacing:13px;color:#c9a35a;font-weight:500}
+.rule{width:420px;height:1px;margin:24px auto 0;background:linear-gradient(90deg,transparent,#c9a35a,transparent)}
+.tag{margin-top:20px;font-size:19px;letter-spacing:7px;color:#e9dcc0;font-weight:500}
+.hero{position:absolute;top:400px;left:0;right:0;height:560px;display:flex;justify-content:center;align-items:flex-end;gap:120px}
+.bottle{text-align:center}
+.glow{position:absolute;top:470px;left:50%;width:640px;height:420px;transform:translateX(-50%);
+ background:radial-gradient(ellipse at center,rgba(232,190,110,.22),transparent 65%)}
+.pedestal{width:230px;height:16px;margin:-4px auto 0;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.75),transparent 70%)}
+.size{margin-top:18px;display:inline-block;padding:12px 36px;border:1.5px solid #c9a35a;border-radius:40px;font-size:26px;letter-spacing:5px;font-weight:600;color:#f3e6c8}
+.notes{position:absolute;top:985px;left:80px;right:80px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.note{border:1px solid rgba(201,163,90,.5);background:rgba(255,255,255,.03);padding:13px 6px;text-align:center}
+.note b{display:block;font-family:Cinzel,serif;font-size:15px;color:#e3c07a;letter-spacing:3px;font-weight:700}
+.note i{display:block;font-style:normal;margin-top:5px;font-size:14px;letter-spacing:3px;color:#d9ccb0}
+.cta{position:absolute;bottom:74px;left:0;right:0;text-align:center}
+.cta h2{font-size:40px;letter-spacing:9px;font-weight:700;color:#e3c07a}
+.cta p{margin-top:12px;font-size:15px;letter-spacing:6px;color:#a89676}
+</style></head>
+<body><div class="poster">
+<div class="frame"></div><div class="frame2"></div>
+<div class="head">
+ <div class="mono"><span>ZZ</span></div>
+ <div class="brand serif">ZZ SCENT</div>
+ <div class="sub serif">EMPIRE</div>
+ <div class="rule"></div>
+ <div class="tag">PREMIUM DECANT COLLECTION</div>
+</div>
+<div class="glow"></div>
+<div class="hero">
+ <div class="bottle"><div id="b5"></div><div class="pedestal"></div><div class="size">5 ML</div></div>
+ <div class="bottle"><div id="b10"></div><div class="pedestal"></div><div class="size">10 ML</div></div>
+</div>
+<div class="notes">
+ <div class="note"><b>NO. 01</b><i>FRUITY • SWEET</i></div>
+ <div class="note"><b>NO. 02</b><i>CHERRY • SMOKY</i></div>
+ <div class="note"><b>NO. 03</b><i>LEATHER • ALMOND</i></div>
+ <div class="note"><b>NO. 04</b><i>TOBACCO • VANILLA</i></div>
+ <div class="note"><b>NO. 05</b><i>OUD • WOODY</i></div>
+ <div class="note"><b>NO. 06</b><i>VANILLA • AMBER</i></div>
+</div>
+<div class="cta">
+ <h2 class="serif">DM UNTUK HARGA &amp; ORDER</h2>
+ <p>PREMIUM DECANT • 5 ML / 10 ML</p>
+</div>
+</div>
+<script>
+function vial(id, w, bodyH, size, liquid){
+  const capH=Math.round(bodyH*0.30), neckH=16, cw=w*0.62, pad=10;
+  const H=capH+neckH+bodyH+pad*2, W=w+pad*2, x0=pad, cx=W/2;
+  const capX=cx-cw/2, neckY=pad+capH, bodyY=neckY+neckH, r=w*0.18;
+  const liqY=bodyY+bodyH*0.12, lblY=bodyY+bodyH*0.30, lblH=bodyH*0.42, lw=w*0.80;
+  document.getElementById(id).innerHTML=`
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="cap${id}" x1="0" x2="1"><stop offset="0" stop-color="#0a0a0a"/><stop offset=".3" stop-color="#3a3a3a"/><stop offset=".55" stop-color="#151515"/><stop offset="1" stop-color="#050505"/></linearGradient>
+  <linearGradient id="gold${id}" x1="0" x2="1"><stop offset="0" stop-color="#8a6526"/><stop offset=".35" stop-color="#f6dc9c"/><stop offset=".6" stop-color="#c79a48"/><stop offset="1" stop-color="#6e4f1c"/></linearGradient>
+  <linearGradient id="glass${id}" x1="0" x2="1"><stop offset="0" stop-color="rgba(255,255,255,.22)"/><stop offset=".15" stop-color="rgba(255,255,255,.06)"/><stop offset=".8" stop-color="rgba(255,255,255,.04)"/><stop offset="1" stop-color="rgba(255,255,255,.2)"/></linearGradient>
+  <linearGradient id="liq${id}" x1="0" x2="1"><stop offset="0" stop-color="${liquid[0]}"/><stop offset=".45" stop-color="${liquid[1]}"/><stop offset="1" stop-color="${liquid[0]}"/></linearGradient>
+  <linearGradient id="lbl${id}" x1="0" x2="1"><stop offset="0" stop-color="#14110c"/><stop offset=".5" stop-color="#221c13"/><stop offset="1" stop-color="#14110c"/></linearGradient>
+  <clipPath id="clip${id}"><rect x="${x0+4}" y="${bodyY+4}" width="${w-8}" height="${bodyH-8}" rx="${r-3}"/></clipPath>
+ </defs>
+ <rect x="${capX}" y="${pad}" width="${cw}" height="${capH-12}" rx="7" fill="url(#cap${id})"/>
+ <rect x="${capX+4}" y="${pad+4}" width="${cw*0.12}" height="${capH-22}" rx="3" fill="rgba(255,255,255,.12)"/>
+ <rect x="${capX-2}" y="${pad+capH-14}" width="${cw+4}" height="14" rx="2" fill="url(#gold${id})"/>
+ <rect x="${cx-cw*0.38}" y="${neckY}" width="${cw*0.76}" height="${neckH}" fill="url(#gold${id})"/>
+ <rect x="${x0}" y="${bodyY}" width="${w}" height="${bodyH}" rx="${r}" fill="rgba(255,255,255,.05)" stroke="rgba(255,240,210,.55)" stroke-width="2"/>
+ <g clip-path="url(#clip${id})">
+  <rect x="${x0}" y="${liqY}" width="${w}" height="${bodyH}" fill="url(#liq${id})"/>
+  <ellipse cx="${cx}" cy="${liqY}" rx="${w/2}" ry="5" fill="rgba(255,235,190,.35)"/>
+  <line x1="${cx}" y1="${bodyY}" x2="${cx}" y2="${bodyY+bodyH-12}" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+ </g>
+ <rect x="${x0}" y="${bodyY}" width="${w}" height="${bodyH}" rx="${r}" fill="url(#glass${id})"/>
+ <rect x="${x0+w*0.10}" y="${bodyY+14}" width="${w*0.07}" height="${bodyH-40}" rx="5" fill="rgba(255,255,255,.28)"/>
+ <rect x="${cx-lw/2}" y="${lblY}" width="${lw}" height="${lblH}" fill="url(#lbl${id})" stroke="url(#gold${id})" stroke-width="2"/>
+ <rect x="${cx-lw/2+5}" y="${lblY+5}" width="${lw-10}" height="${lblH-10}" fill="none" stroke="rgba(214,175,100,.55)" stroke-width="1"/>
+ <text x="${cx}" y="${lblY+lblH*0.30}" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="${lw*0.17}" fill="#e8c77e" letter-spacing="2">ZZ</text>
+ <text x="${cx}" y="${lblY+lblH*0.48}" text-anchor="middle" font-family="Cinzel,serif" font-weight="700" font-size="${lw*0.11}" fill="#f3e3bd" letter-spacing="3">SCENT</text>
+ <text x="${cx}" y="${lblY+lblH*0.62}" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="${lw*0.065}" fill="#c9a35a" letter-spacing="4">EMPIRE</text>
+ <line x1="${cx-lw*0.25}" y1="${lblY+lblH*0.72}" x2="${cx+lw*0.25}" y2="${lblY+lblH*0.72}" stroke="#c9a35a" stroke-width="1"/>
+ <text x="${cx}" y="${lblY+lblH*0.87}" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="${lw*0.08}" fill="#f3e3bd" letter-spacing="2">${size}</text>
+</svg>`;
+}
+vial('b5', 120, 250, '5 ML', ['#b36b1c','#f0b55a']);
+vial('b10', 150, 330, '10 ML', ['#8a4a12','#e39a3c']);
+</script>
+</body></html>
